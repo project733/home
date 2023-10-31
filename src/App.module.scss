@@ -1,0 +1,120 @@
+@import "./css/utilities/index";
+
+$body1: #a09b94;
+$body2: #776d5a;
+$body3: #453f3c;
+$body4: #a3b9c9;
+$hilite: #ffbb00;
+$hilite2: #ffa600;
+$footer: #4f5d75;
+$padding: 20px;
+
+.container {
+  @include flexbox(row, normal, normal);
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  background: linear-gradient(75deg, $body1, $body2, $body3, $body4);
+  background-size: 400% 400%;
+  flex-grow: 1;
+  height: 100vh;
+  width: 30vw;
+  overflow: hidden;
+  padding: $padding;
+  position: relative;
+
+  animation: fadeIn 0.7s ease-in-out forwards, gradient 23s ease infinite;
+
+  h1 {
+    @include font-size(96);
+    padding-bottom: calc($padding + 50px);
+  }
+
+  h2,
+  p {
+    @include font-size(64);
+    padding-bottom: calc($padding * 2);
+  }
+
+  .myname {
+    color: $hilite;
+  }
+  .myskills {
+    color: $hilite2;
+  }
+  .mywork {
+    padding: $padding calc($padding * 4) $padding $padding;
+    position: relative;
+    text-align: right;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 50px;
+      width: 50px;
+      border-top: 10px solid $font-color;
+      border-right: 10px solid $font-color;
+      position: absolute;
+      right: $padding;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+}
+
+.projects {
+  flex-grow: 1;
+  @include flexbox(row, normal, normal);
+  flex-flow: row wrap;
+  width: 70vw;
+
+  section {
+    flex-grow: 1;
+    height: 50vh;
+    width: 33%;
+    opacity: 0;
+
+    will-change: transform;
+
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+    animation-name: fadeIn;
+
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      z-index: 1;
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .projects section:nth-of-type(#{$i}) {
+    animation-delay: #{0.3 + calc(($i) / 4)}s;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

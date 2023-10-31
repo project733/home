@@ -1,0 +1,11 @@
+// mq-documentation and examples
+// https://github.com/sass-mq/sass-mq
+
+@use "./../../../node_modules/sass-mq/mq.import";
+
+$mq-breakpoints: (
+    mobile: 320px,
+    tablet: 768px,
+    desktop: 980px,
+    wide: 1300px,
+);
