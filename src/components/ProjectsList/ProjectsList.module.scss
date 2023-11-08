@@ -1,0 +1,184 @@
+@import "../../css/utilities/index";
+
+$button-background: rgba(255, 255, 255, 0.8);
+$font-color: #333;
+$padding: 20px;
+
+.visuallyhidden {
+  @include visually-hidden;
+}
+
+.projects {
+  flex-grow: 1;
+  @include flexbox(column, normal, normal);
+  position: relative;
+  width: 100%;
+
+  section {
+    background-size: 100% 200%;
+    color: $font-color;
+    cursor: pointer;
+    font-weight: $font-weight-regular;
+    height: calc(100vh / 6);
+
+    will-change: transform;
+
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-duration: 0.2s;
+    animation-name: slideUp;
+
+    transition: slideUp 0.5s ease-in-out;
+
+    .tile {
+      padding: calc($padding * 2);
+
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-duration: 0.4s;
+      animation-name: fadeIn;
+
+      transition: fadeIn 0.5s ease-in-out;
+    }
+
+    h3 {
+      @include font-size(22);
+      padding: $padding 0;
+    }
+
+    ul {
+      margin-top: calc($padding/2);
+      margin-left: calc($padding);
+    }
+
+    @include mq($from: small-screen) {
+      .tile {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      // &:hover,
+      // &:focus {
+      //   transform: scale(1.1);
+      //   z-index: 1;
+      // }
+    }
+  }
+
+  @include mq($from: small-screen) {
+    flex-direction: row;
+    flex-flow: row wrap;
+    width: 70vw;
+
+    section {
+      flex-grow: 1;
+      height: 50vh;
+      width: 33%;
+    }
+  }
+}
+
+:global {
+  .projectTile {
+    &1 {
+      @include slide-background(#333, lightgrey);
+    }
+
+    &2 {
+      @include slide-background(#333, lightpink);
+    }
+
+    &3 {
+      @include slide-background(#333, goldenrod);
+    }
+
+    &4 {
+      @include slide-background(#333, lightskyblue);
+    }
+
+    &5 {
+      @include slide-background(#333, lightcoral);
+    }
+
+    &6 {
+      @include slide-background(#333, gold);
+    }
+  }
+
+  .details {
+    opacity: 0;
+  }
+
+  section .closedetails {
+    background-color: $button-background;
+    border: none;
+    cursor: pointer;
+    display: none;
+    @include text-format($font-family-robotocondensed,
+      $font-weight-regular,
+      22,
+      $font-color,
+      normal);
+    padding: $padding calc($padding/2);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  section.open {
+    cursor: default;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    animation-duration: 5.2s;
+
+    // &:hover {
+    //   transform: none;
+    // }
+
+    .details {
+      opacity: 1;
+    }
+
+    .closedetails {
+      display: block;
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .projects section:nth-of-type(#{$i}) {
+    animation-delay: #{0.3 + calc(($i) / 4)}s;
+  }
+
+  .projects section:nth-of-type(#{$i}) .tile {
+    animation-delay: #{2.2 + calc(($i) / 4)}s;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 0% 100%;
+  }
+}

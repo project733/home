@@ -1,4 +1,4 @@
-@import "./utilities/index";
+@import "utilities/index";
 
 .visuallyhidden {
   @include visually-hidden;
@@ -6,18 +6,23 @@
 
 html {
   scroll-behavior: smooth;
-  @include hide-scrollbars;
 }
 
 body {
   background-color: $body-color;
   @include text-format(
-    $font-family-monserrat,
-    $font-weight-bold,
+    $font-family-robotocondensed,
+    $font-weight-regular,
     12,
     $font-color,
     normal
   );
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.noscrollbar {
+  @include mq($from: desktop) {
+    @include hide-scrollbars;
+  }
 }

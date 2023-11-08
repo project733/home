@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "imgSrc": "https://placehold.co/400x200",
+    "projectName": "Kanban-style board",
+    "desc": "UI and front end development",
+    "features": ["Semantic HTML", "JavaScript", "Responsive CSS", "SASS", "Drag and drop", "WCAG 2.1/ADA AA compliance", "localStorage"]
+  },
+  {
+    "id": 2,
+    "imgSrc": "https://placehold.co/400x200",
+    "projectName": "Costco US/CA Online Photocenter",
+    "desc": "UI and front end development",
+    "features": ["Semantic HTML", "JavaScript", "jQuery", "Responsive CSS", "SASS", "WCAG 2.1/ADA AA compliance", "CD/CI pipelines"]
+  },
+  {
+    "id": 3,
+    "imgSrc": "https://placehold.co/400x200",
+    "projectName": "Samsclub US Online Photocenter",
+    "desc": "UI and front end development",
+    "features": ["Semantic HTML", "JavaScript", "jQuery", "Responsive CSS", "SASS", "WCAG 2.1/ADA AA compliance", "CD/CI pipelines"]
+  },
+  {
+    "id": 4,
+    "imgSrc": "https://placehold.co/400x200",
+    "projectName": "Staples Print & Marketing Services US",
+    "desc": "Front end development",
+    "features": ["Semantic HTML", "ReactJS", "TypeScript", "Unit testing", "Responsive CSS", "SASS", "WCAG 2.1/ADA AA compliance", "CD/CI pipelines", "Git"]
+  },
+  {
+    "id": 5,
+    "imgSrc": "https://placehold.co/400x200",
+    "projectName": "McIvor and Company / InspirationalHR.com",
+    "desc": "Logo design, UI and front end development",
+    "features": ["Semantic HTML", "PHP", "Responsive CSS", "Business card design", "Logo"]
+  },
+  {
+    "id": 6,
+    "imgSrc": "https://placehold.co/400x200",
+    "projectName": "Nori Accounting Services Inc.",
+    "desc": "Logo and card design",
+    "features": ["Business card design", "Logo"]
+  }
+]

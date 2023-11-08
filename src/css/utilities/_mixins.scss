@@ -43,3 +43,13 @@
         display: none;
     }
 }
+
+// Box shadow
+@mixin box-shadow($x: 1px, $y: 1px, $blur: 3px, $spread: 2px, $opacity: 0.3) {
+    box-shadow: $x $y $blur $spread rgba(0, 0, 0, $opacity);
+}
+
+// Slide up background
+@mixin slide-background($start: #333, $finish: #333) {
+    background: linear-gradient(to bottom, $start 50%, $finish 50%);
+}

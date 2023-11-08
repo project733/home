@@ -1,4 +1,4 @@
-@import "./css/utilities/index";
+@import "css/utilities/index";
 
 $body1: #a09b94;
 $body2: #776d5a;
@@ -8,106 +8,149 @@ $hilite: #ffbb00;
 $hilite2: #ffa600;
 $footer: #4f5d75;
 $padding: 20px;
+$arrow: 50px;
 
 .container {
-  @include flexbox(row, normal, normal);
-  height: 100vh;
-  width: 100vw;
+  @include flexbox(column, normal, normal);
+  width: 100%;
+
+  @include mq($from: small-screen) {
+    flex-direction: row;
+  }
+
+  @include mq($from: desktop) {
+    @include hide-scrollbars;
+  }
 }
 
 header {
   background: linear-gradient(75deg, $body1, $body2, $body3, $body4);
   background-size: 400% 400%;
   flex-grow: 1;
-  height: 100vh;
-  width: 30vw;
+  height: auto;
+  width: 100%;
+  opacity: 0;
   overflow: hidden;
   padding: $padding;
   position: relative;
+  text-align: center;
 
   animation: fadeIn 0.7s ease-in-out forwards, gradient 23s ease infinite;
 
   h1 {
-    @include font-size(96);
-    padding-bottom: calc($padding + 50px);
+    font-size: 20vw;
+    font-weight: normal;
+    padding-bottom: calc($padding * 2);
+
+    @include mq($from: tablet) {
+      @include font-size(96);
+      padding-bottom: calc($padding * 3);
+    }
+
+    @include mq($from: small-screen) {
+      font-size: 7vw;
+    }
+
+    @include mq($from: wide2) {
+      @include font-size(96);
+    }
   }
 
   h2,
   p {
-    @include font-size(64);
+    font-size: 15vw;
+    font-weight: normal;
     padding-bottom: calc($padding * 2);
+  }
+
+  h2 {
+    @include mq($from: tablet) {
+      @include font-size(64);
+    }
+
+    @include mq($from: small-screen) {
+      font-size: 4vw;
+    }
+
+    @include mq($from: wide2) {
+      @include font-size(64);
+    }
   }
 
   .myname {
     color: $hilite;
     text-transform: uppercase;
   }
+
   .myskills {
     color: $hilite2;
   }
+
   .mywork {
-    padding: $padding calc($padding * 4) $padding $padding;
+    font-size: 8vw;
+    padding: $padding $padding calc($padding * 3);
     position: relative;
-    text-align: right;
+    text-align: center;
 
     &:after {
       content: "";
       display: block;
-      height: 50px;
-      width: 50px;
-      border-top: 10px solid $font-color;
-      border-right: 10px solid $font-color;
+      border-top: calc($padding / 3) solid $font-color;
+      border-right: calc($padding / 3) solid $font-color;
+      height: calc($arrow - $padding);
+      width: calc($arrow - $padding);
       position: absolute;
-      right: $padding;
-      top: 50%;
-      transform: translateY(-50%) rotate(45deg);
+      right: calc(50% - ($arrow - $padding));
+      bottom: $padding;
+      transform: translateX(-50%) rotate(135deg);
+    }
+
+    @include mq($from: tablet) {
+      @include font-size(48);
+
+      &:after {
+        border-top: calc($padding / 2) solid $font-color;
+        border-right: calc($padding / 2) solid $font-color;
+        height: $arrow;
+        width: $arrow;
+        right: calc(50% - $arrow);
+        bottom: $padding;
+      }
+    }
+
+    @include mq($from: small-screen) {
+      font-size: 3vw;
+      padding: $padding 6vw $padding $padding;
+      text-align: right;
+
+      &:after {
+        border-top: 0.8vw solid $font-color;
+        border-right: 0.8vw solid $font-color;
+        height: 3vw;
+        width: 3vw;
+        transform: translateY(-50%) rotate(45deg);
+        right: $padding;
+        top: 50%;
+      }
+    }
+
+    @include mq($from: wide2) {
+      @include font-size(48);
+      padding: $padding calc($padding * 4) $padding $padding;
+
+      &:after {
+        border-top: 10px solid $font-color;
+        border-right: 10px solid $font-color;
+        height: $arrow;
+        width: $arrow;
+      }
     }
   }
-}
 
-.projects {
-  flex-grow: 1;
-  @include flexbox(row, normal, normal);
-  flex-flow: row wrap;
-  width: 70vw;
-
-  section {
-    flex-grow: 1;
-    height: 50vh;
-    width: 33%;
-    opacity: 0;
-
-    will-change: transform;
-
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-duration: 0.5s;
-    animation-name: fadeIn;
-
-    transition: all .3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.1);
-      z-index: 1;
-    }
-  }
-}
-
-@for $i from 1 through 6 {
-  .projects section:nth-of-type(#{$i}) {
-    animation-delay: #{0.3 + calc(($i) / 4)}s;
-  }
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  @include mq($from: small-screen) {
+    height: 100vh;
+    width: 30vw;
+    text-align: left;
   }
 }
 
@@ -115,7 +158,22 @@ header {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }
