@@ -23,6 +23,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: $body-color;
+}
+
 .container {
   @include flexbox(column, normal, normal);
   width: 100%;
