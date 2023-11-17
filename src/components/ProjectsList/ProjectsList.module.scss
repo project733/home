@@ -62,9 +62,13 @@ $padding: 20px;
       width: 100%;
     }
 
+    p {
+      line-height: 1.3rem;
+      padding-bottom: $padding;
+    }
+
     ul {
       list-style-type: disc;
-      margin-top: calc($padding/2);
       margin-left: calc($padding);
 
       li {
@@ -93,6 +97,11 @@ $padding: 20px;
         animation-name: fadeIn;
 
         transition: fadeIn 0.5s ease-in-out;
+
+        &:after {
+          bottom: 0;
+          top: auto;
+        }
       }
 
       h3 {
@@ -155,8 +164,10 @@ $padding: 20px;
 
   @include mq($from: tablet) {
     .img:first-child {
+      padding-left: 20vw;
+
       img {
-        height: 50vh;
+        height: 40vh;
       }
     }
   }
@@ -165,9 +176,11 @@ $padding: 20px;
     flex-direction: row;
 
     .img:first-child {
+      padding-left: 0;
+
       img {
-        height: auto;
-        width: 150%;
+        height: 30vh;
+        // width: 150%;
       }
     }
   }
@@ -344,12 +357,21 @@ $padding: 20px;
         }
       }
 
+      @include mq($from: tablet) {
+        .screenshots {
+          .img:first-child {
+            padding-left: 0;
+          }
+        }
+      }
+
       @include mq($from: small-screen) {
         .tile {
           flex-direction: row;
         }
 
         .text {
+          padding-right: $padding * 2;
           width: 50%;
         }
 

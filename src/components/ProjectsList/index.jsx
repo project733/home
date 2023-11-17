@@ -59,8 +59,12 @@ function Projects() {
     }
     e.currentTarget.parentNode.parentNode.setAttribute("aria-expanded", false);
     // Resets .details and .js-screenshots images blocks back to non-readable via screenreaders
-    e.currentTarget.previousSibling.previousSibling.querySelector(".details").setAttribute("aria-hidden", true);
-    const screens = e.currentTarget.previousSibling.querySelectorAll(".js-screenshots img");
+    e.currentTarget.previousSibling.previousSibling
+      .querySelector(".details")
+      .setAttribute("aria-hidden", true);
+    const screens = e.currentTarget.previousSibling.querySelectorAll(
+      ".js-screenshots img"
+    );
     for (let i = 0; i < screens.length; i++) {
       screens[i].setAttribute("aria-hidden", true);
     }
@@ -89,54 +93,65 @@ function Projects() {
         aria-label="List of projects"
         ref={divRef}
       >
-        {projects.map((project) => (
-          <li
-            className={`projectTile${project.id}`}
-            key={project.id}
-            onClick={toggleOpen}
-            onKeyDown={enterHandler}
-            tabIndex={0}
-          >
-            <div className={styles.tile}>
-              <div className={styles.text}>
-                <h3 id={`projectTitle${project.id}`}>
-                  {project.projectName}{" "}
-                  <span className={styles.visuallyhidden}> project</span>
-                </h3>
-                <div className="details" aria-hidden={true}>
-                  <p>Features:</p>
-                  <ul>
-                    {project.features.map((item, index) => {
-                      return <li key={index}>{item}</li>;
-                    })}
-                  </ul>
+        {/* Tiles capped at 6 reverse order - most recent at the end of array */}
+        {projects
+          .slice(-6)
+          .reverse()
+          .map((project, index) => (
+            <li
+              className={`projectTile${index + 1}`}
+              key={project.id}
+              onClick={toggleOpen}
+              onKeyDown={enterHandler}
+              tabIndex={0}
+            >
+              <div className={styles.tile}>
+                <div className={styles.text}>
+                  <h3 id={`projectTitle${index + 1}`}>
+                    {project.projectName}{" "}
+                    <span className={styles.visuallyhidden}> project</span>
+                  </h3>
+                  <div className="details" aria-hidden={true}>
+                    {project.desc ? <p>{project.desc}</p> : null}
+                    {project.work ? <p>{project.work}</p> : null}
+                    {project.link ? <p><a href={project.link} target="_blank" rel="noopener noreferrer">{project.link}</a></p> : null}
+                    {project.features.length > 0 ? (
+                      <>
+                        <p>Features:</p>
+                        <ul>
+                          {project.features.map((item, index) => {
+                            return <li key={index}>{item}</li>;
+                          })}
+                        </ul>
+                      </>
+                    ) : null}
+                  </div>
                 </div>
+                <div className={`${styles.screenshots} js-screenshots`}>
+                  {project.imgSrc.map((screenshot, index) => {
+                    return (
+                      <div key={index} className={styles.img}>
+                        <img
+                          src={process.env.PUBLIC_URL + screenshot.url}
+                          alt={screenshot.alt}
+                          aria-hidden={true}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <button
+                  className="closedetails"
+                  onClick={toggleClose}
+                  onKeyDown={enterCloseHandler}
+                >
+                  <span className={styles.visuallyhidden}>
+                    Close details on {project.projectName} project.
+                  </span>
+                </button>
               </div>
-              <div className={`${styles.screenshots} js-screenshots`}>
-                {project.imgSrc.map((screenshot, index) => {
-                  return (
-                    <div key={index} className={styles.img}>
-                      <img
-                        src={process.env.PUBLIC_URL + screenshot.url}
-                        alt={screenshot.alt}
-                        aria-hidden={true}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-              <button
-                className="closedetails"
-                onClick={toggleClose}
-                onKeyDown={enterCloseHandler}
-              >
-                <span className={styles.visuallyhidden}>
-                  Close details on {project.projectName} project.
-                </span>
-              </button>
-            </div>
-          </li>
-        ))}
+            </li>
+          ))}
       </ul>
     </main>
   );
