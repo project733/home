@@ -1,44 +1,206 @@
 [
   {
     "id": 1,
-    "imgSrc": "https://placehold.co/400x200",
     "projectName": "Kanban-style board",
     "desc": "UI and front end development",
-    "features": ["Semantic HTML", "JavaScript", "Responsive CSS", "SASS", "Drag and drop", "WCAG 2.1/ADA AA compliance", "localStorage"]
+    "features": [
+      "Semantic HTML",
+      "JavaScript",
+      "Responsive CSS",
+      "SASS",
+      "Drag and drop",
+      "WCAG 2.1/ADA AA compliance",
+      "localStorage"
+    ],
+    "imgSrc": [
+      {
+        "url": "/assets/images/projects/kanban-desktop.png",
+        "alt": "Desktop layout of Kanban-style board"
+      },
+      {
+        "url": "/assets/images/projects/kanban-tablet.png",
+        "alt": "Tablet layout of Kanban-style board"
+      },
+      {
+        "url": "/assets/images/projects/kanban-mobile.png",
+        "alt": "Mobile layout of Kanban-style board"
+      }
+    ]
   },
   {
     "id": 2,
-    "imgSrc": "https://placehold.co/400x200",
     "projectName": "Costco US/CA Online Photocenter",
     "desc": "UI and front end development",
-    "features": ["Semantic HTML", "JavaScript", "jQuery", "Responsive CSS", "SASS", "WCAG 2.1/ADA AA compliance", "CD/CI pipelines"]
+    "features": [
+      "Semantic HTML",
+      "JavaScript",
+      "jQuery",
+      "Responsive CSS",
+      "SASS",
+      "WCAG 2.1/ADA AA compliance",
+      "CD/CI pipelines"
+    ],
+    "imgSrc": [
+      {
+        "url": "/assets/images/projects/costco-desktop.png",
+        "alt": "Desktop layout of Costco Online Photocenter"
+      },
+      {
+        "url": "/assets/images/projects/costco-tablet.png",
+        "alt": "Tablet layout of Costco Online Photocenter"
+      },
+      {
+        "url": "/assets/images/projects/costco-mobile.png",
+        "alt": "Mobile layout of Costco Online PHotocenter"
+      },
+      {
+        "url": "/assets/images/projects/costco-greeting-cards-builder.png",
+        "alt": "Costco Online Photocenter responsive Photo Card Builder"
+      },
+      {
+        "url": "/assets/images/projects/costco-photo-gifts.png",
+        "alt": "Costco Online Photocenter Photo Gifts landing page"
+      },
+      {
+        "url": "/assets/images/projects/costco-canvas-prints.png",
+        "alt": "Costco Online Photocenter Canvas Prints landing page"
+      },
+      {
+        "url": "/assets/images/projects/costco-greeting-cards-search.png",
+        "alt": "Costco Online Photocenter Greeting Cards sub-site Search Results page"
+      },
+      {
+        "url": "/assets/images/projects/costco-wall-decor.png",
+        "alt": "Costco Online Photocenter Wall Decor landing page"
+      },
+      {
+        "url": "/assets/images/projects/costco-gift-builder.png",
+        "alt": "Costco Online Photocenter responsive Photo Gift Builder"
+      }
+    ]
   },
   {
     "id": 3,
-    "imgSrc": "https://placehold.co/400x200",
     "projectName": "Samsclub US Online Photocenter",
     "desc": "UI and front end development",
-    "features": ["Semantic HTML", "JavaScript", "jQuery", "Responsive CSS", "SASS", "WCAG 2.1/ADA AA compliance", "CD/CI pipelines"]
+    "features": [
+      "Semantic HTML",
+      "JavaScript",
+      "jQuery",
+      "Responsive CSS",
+      "SASS",
+      "WCAG 2.1/ADA AA compliance",
+      "CD/CI pipelines"
+    ],
+    "imgSrc": [
+      {
+        "url": "/assets/images/projects/samsclub-desktop.png",
+        "alt": "Desktop layout of Samsclub Online Photocenter"
+      },
+      {
+        "url": "/assets/images/projects/samsclub-tablet.png",
+        "alt": "Tablet layout of Samsclub Online Photoecnter"
+      },
+      {
+        "url": "/assets/images/projects/samsclub-mobile.png",
+        "alt": "Mobile layout of Samsclub Online Photocenter"
+      },
+      {
+        "url": "/assets/images/projects/samsclub-stationery-desktop.png",
+        "alt": "Samsclub Online Photocenter Stationery search results page"
+      }
+    ]
   },
   {
     "id": 4,
-    "imgSrc": "https://placehold.co/400x200",
     "projectName": "Staples Print & Marketing Services US",
     "desc": "Front end development",
-    "features": ["Semantic HTML", "ReactJS", "TypeScript", "Unit testing", "Responsive CSS", "SASS", "WCAG 2.1/ADA AA compliance", "CD/CI pipelines", "Git"]
+    "features": [
+      "Semantic HTML",
+      "ReactJS",
+      "TypeScript",
+      "Unit testing",
+      "Responsive CSS",
+      "SASS",
+      "WCAG 2.1/ADA AA compliance",
+      "CD/CI pipelines",
+      "Git"
+    ],
+    "imgSrc": [
+      {
+        "url": "/assets/images/projects/staples-product-pricing-desktop.png",
+        "alt": "Desktop layout of Staples Print & Marketing Services Product Pricing component"
+      },
+      {
+        "url": "/assets/images/projects/staples-product-pricing-tablet.png",
+        "alt": "Tablet layout of Staples Print & Marketing Services Product Pricing component"
+      },
+      {
+        "url": "/assets/images/projects/staples-product-pricing-mobile.png",
+        "alt": "Mobile layout of Staples Print & Marketing Services Product Pricing component"
+      },
+      {
+        "url": "/assets/images/projects/staples-product-pricing-modal.png",
+        "alt": "Staples Print & Marketing Services Product Pricing modal"
+      }
+    ]
   },
   {
     "id": 5,
-    "imgSrc": "https://placehold.co/400x200",
-    "projectName": "McIvor and Company / InspirationalHR.com",
+    "projectName": "McIvor & Company / InspirationalHR.com",
     "desc": "Logo design, UI and front end development",
-    "features": ["Semantic HTML", "PHP", "Responsive CSS", "Business card design", "Logo"]
+    "features": [
+      "Semantic HTML",
+      "PHP",
+      "Responsive CSS",
+      "Business card design",
+      "Logo"
+    ],
+    "imgSrc": [
+      {
+        "url": "/assets/images/projects/inspirationalhr-desktop.png",
+        "alt": "Desktop layout of inspirationalhr.com"
+      },
+      {
+        "url": "/assets/images/projects/inspirationalhr-mcivor-card-01.png",
+        "alt": "Final design of McIvor & Company business card"
+      },
+      {
+        "url": "/assets/images/projects/inspirationalhr-mcivor-card-02.png",
+        "alt": "Design 2 of McIvor & Company business card"
+      },
+      {
+        "url": "/assets/images/projects/inspirationalhr-mcivor-card-03.png",
+        "alt": "Design 3 of McIvor & Company business card"
+      },
+      {
+        "url": "/assets/images/projects/inspirationalhr-mcivor-card-04.png",
+        "alt": "Design 4 of McIvor & Company business card"
+      },
+      {
+        "url": "/assets/images/projects/inspirationalhr-mcivor-card-05.png",
+        "alt": "Design 5 of McIvor & Company business card"
+      },
+      {
+        "url": "/assets/images/projects/inspirationalhr-mcivor-card-06.png",
+        "alt": "Design 6 of McIvor & Company business card"
+      }
+    ]
   },
   {
     "id": 6,
-    "imgSrc": "https://placehold.co/400x200",
     "projectName": "Nori Accounting Services Inc.",
     "desc": "Logo and card design",
-    "features": ["Business card design", "Logo"]
+    "features": ["Logo design", "Business card design"],
+    "imgSrc": [
+      {
+        "url": "/assets/images/projects/nori-accounting-bizcard.png",
+        "alt": "Final design of Nori Accounting business card"
+      },
+      {
+        "url": "/assets/images/projects/nori-accounting-card-designs.png",
+        "alt": "6 various designs of Nori Accounting business card and logo"
+      }
+    ]
   }
 ]

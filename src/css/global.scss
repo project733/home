@@ -8,19 +8,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: $body-color;
-  @include text-format(
-    $font-family-robotocondensed,
-    $font-weight-regular,
-    12,
-    $font-color,
-    normal
-  );
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .noscrollbar {
   @include mq($from: desktop) {
     @include hide-scrollbars;

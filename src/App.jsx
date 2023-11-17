@@ -32,25 +32,10 @@ function App() {
       <header className={styles.fade}>
         <h1 className={styles.myname}>Kevin Leung</h1>
         <h2>I'm a <span className={styles.myskills}>Web/HTML Programmer</span></h2>
-        <p className={styles.mywork}>Projects worked on</p>
+        <p className={styles.mywork}>My portfolio</p>
       </header>
 
       <Projects />
-      
-      
-      {/* <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
     </div>
   );
 }

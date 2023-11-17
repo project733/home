@@ -13,7 +13,7 @@
     font-size: calc($pixel-value / $base) + rem;
 }
 
-@mixin text-format($family, $weight, $pixel-value, $color, $line-height) {
+@mixin text-format($family, $weight, $pixel-value, $color, $line-height: 1) {
     font-family: $family;
     font-weight: $weight;
     @include font-size($pixel-value);
@@ -28,7 +28,7 @@
 }
 
 // Flexbox
-@mixin flexbox($direction: row, $justify: normal, $align: normal) {
+@mixin flexbox($direction: row, $justify: flex-start, $align: flex-start) {
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
@@ -52,4 +52,9 @@
 // Slide up background
 @mixin slide-background($start: #333, $finish: #333) {
     background: linear-gradient(to bottom, $start 50%, $finish 50%);
+}
+
+// Text border
+@mixin text-border($color) {
+    text-shadow: -1px 1px 0 $color, 1px 1px 0 $color, 1px -1px $color, -1px -1px 0 $color;
 }

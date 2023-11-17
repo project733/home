@@ -1,6 +1,8 @@
 @import "../../css/utilities/index";
 
 $button-background: rgba(255, 255, 255, 0.8);
+$border-color: #333;
+$border-img: 1px solid #bebebe;
 $font-color: #333;
 $padding: 20px;
 
@@ -10,45 +12,62 @@ $padding: 20px;
 
 .projects {
   flex-grow: 1;
-  @include flexbox(column, normal, normal);
+  @include flexbox(column, flex-start, flex-start);
+  list-style-type: none;
   position: relative;
   width: 100%;
 
-  section {
+  > li {
     background-size: 100% 200%;
     color: $font-color;
     cursor: pointer;
     font-weight: $font-weight-regular;
-    height: calc(100vh / 6);
-
-    will-change: transform;
-
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-duration: 0.2s;
-    animation-name: slideUp;
-
-    transition: slideUp 0.5s ease-in-out;
+    position: relative;
+    width: 100%;
 
     .tile {
       padding: calc($padding * 2);
+      overflow: hidden;
 
-      animation-timing-function: linear;
-      animation-fill-mode: both;
-      animation-duration: 0.4s;
-      animation-name: fadeIn;
+      &:after {
+        background: $border-color;
+        content: '';
+        display: block;
+        height: 10px;
+        width: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
 
-      transition: fadeIn 0.5s ease-in-out;
+        transition: width 0.2s linear;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      z-index: 1;
+
+      .tile:after {
+        width: 100%;
+      }
     }
 
     h3 {
       @include font-size(22);
       padding: $padding 0;
+      position: absolute;
+      bottom: 0;
+      width: calc(100% - ($padding * 4));
     }
 
     ul {
+      list-style-type: disc;
       margin-top: calc($padding/2);
       margin-left: calc($padding);
+
+      li {
+        padding-bottom: calc($padding/5);
+      }
     }
 
     @include mq($from: small-screen) {
@@ -57,13 +76,14 @@ $padding: 20px;
         width: 100%;
         overflow: hidden;
         position: relative;
-      }
 
-      // &:hover,
-      // &:focus {
-      //   transform: scale(1.1);
-      //   z-index: 1;
-      // }
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-duration: 0.2s;
+        animation-name: fadeIn;
+
+        transition: fadeIn 0.5s ease-in-out;
+      }
     }
   }
 
@@ -72,7 +92,15 @@ $padding: 20px;
     flex-flow: row wrap;
     width: 70vw;
 
-    section {
+    > li {
+      will-change: transform;
+
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-duration: 0.2s;
+      animation-name: slideUp;
+
+      transition: slideUp 0.5s ease-in-out;
       flex-grow: 1;
       height: 50vh;
       width: 33%;
@@ -80,86 +108,257 @@ $padding: 20px;
   }
 }
 
-:global {
-  .projectTile {
-    &1 {
-      @include slide-background(#333, lightgrey);
+.screenshots {
+  @include flexbox(row, flex-start, flex-start);
+  flex-wrap: wrap;
+
+  img {
+    border: $border-img;
+    @include box-shadow(3px, 4px, 4px, 1px, 0.1);
+  }
+
+  .img {
+    height: 0;
+    width: 0;
+    opacity: 0;
+
+    img {
+      height: auto;
     }
 
-    &2 {
-      @include slide-background(#333, lightpink);
-    }
+    &:first-child {
+      height: auto;
+      width: 100%;
+      opacity: 1;
+      text-align: right;
 
-    &3 {
-      @include slide-background(#333, goldenrod);
-    }
-
-    &4 {
-      @include slide-background(#333, lightskyblue);
-    }
-
-    &5 {
-      @include slide-background(#333, lightcoral);
-    }
-
-    &6 {
-      @include slide-background(#333, gold);
+      img {
+        height: 30vh;
+        width: auto;
+      }
     }
   }
 
+  @include mq($from: small-screen) {
+    flex-direction: row;
+
+    .img:first-child {
+      img {
+        height: auto;
+        width: 150%;
+      }
+    }
+  }
+}
+
+:global {
   .details {
+    height: 0;
     opacity: 0;
   }
 
-  section .closedetails {
-    background-color: $button-background;
+  .projectTile {
+    &1 {
+      background: lightgrey;
+      @include text-border(lightgrey);
+
+      @include mq($from: small-screen) {
+        @include slide-background(#333, lightgrey);
+      }
+    }
+
+    &2 {
+      background: lightpink;
+      @include text-border(lightpink);
+
+      @include mq($from: small-screen) {
+        @include slide-background(#333, lightpink);
+      }
+    }
+
+    &3 {
+      background: goldenrod;
+      @include text-border(goldenrod);
+
+      @include mq($from: small-screen) {
+        @include slide-background(#333, goldenrod);
+      }
+    }
+
+    &4 {
+      background: lightskyblue;
+      @include text-border(lightskyblue);
+
+      @include mq($from: small-screen) {
+        @include slide-background(#333, lightskyblue);
+      }
+
+    }
+
+    &5 {
+      background: lightcoral;
+      @include text-border(lightcoral);
+
+      @include mq($from: small-screen) {
+        @include slide-background(#333, lightcoral);
+      }
+    }
+
+    &6 {
+      background: gold;
+      @include text-border(gold);
+
+      @include mq($from: small-screen) {
+        @include slide-background(#333, gold);
+      }
+    }
+  }
+
+  li .closedetails {
+    background-color: transparent;
     border: none;
     cursor: pointer;
     display: none;
-    @include text-format($font-family-robotocondensed,
-      $font-weight-regular,
-      22,
-      $font-color,
-      normal);
-    padding: $padding calc($padding/2);
+    font-size: 0;
+    padding: calc($padding * 2);
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
+    right: 0;
+    top: 0;
+    z-index: -1;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      margin-top: -4px;
+      width: calc($padding * 2);
+      height: 4px;
+      background: #000;
+      border-radius: 1px;
+    }
+
+    &:before {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
   }
 
-  section.open {
+  li.closed {
+    height: 0;
+    display: none;
+
+    @include mq($from: small-screen) {
+      display: list-item;
+      height: 50vh;
+    }
+  }
+
+  li.open {
     cursor: default;
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 2;
-    animation-duration: 5.2s;
 
-    // &:hover {
-    //   transform: none;
-    // }
+    h3 {
+      padding: 0 0 $padding 0;
+      position: static;
+    }
 
     .details {
+      height: auto;
       opacity: 1;
+    }
+
+    :local {
+      .tile {
+        @include flexbox(column, flex-start, flex-start);
+        flex-wrap: wrap;
+        overflow-y: auto;
+      }
+
+      .tile:after {
+        display: none;
+      }
+
+      .text {
+        padding-bottom: $padding;
+        width: 100%;
+      }
+
+      .screenshots {
+        padding-bottom: $padding;
+        gap: $padding;
+        width: 100%;
+
+        .img {
+          height: auto;
+          width: auto;
+          opacity: 1;
+
+          img {
+            height: 30vw;
+            max-width: 100%;
+          }
+        }
+
+        .img:first-child {
+          text-align: left;
+
+          img {
+            max-height: none;
+            width: auto;
+          }
+        }
+      }
+
+      @include mq($from: small-screen) {
+        .tile {
+          flex-direction: row;
+        }
+
+        .text {
+          width: 50%;
+        }
+
+        .screenshots {
+          flex-direction: row;
+          width: 50%;
+
+          .img img {
+            height: 20vw;
+          }
+        }
+      }
     }
 
     .closedetails {
       display: block;
+      z-index: 3;
+    }
+
+    @include mq($from: small-screen) {
+      position: absolute;
     }
   }
 }
 
 @for $i from 1 through 6 {
-  .projects section:nth-of-type(#{$i}) {
+  .projects > li:nth-of-type(#{$i}) {
     animation-delay: #{0.3 + calc(($i) / 4)}s;
   }
 
-  .projects section:nth-of-type(#{$i}) .tile {
-    animation-delay: #{2.2 + calc(($i) / 4)}s;
+  .projects > li:nth-of-type(#{$i}) .tile {
+    animation-delay: #{1.8 + calc(($i) / 4)}s;
   }
 }
 

@@ -1,5 +1,6 @@
 @import "css/utilities/index";
 
+$body-color: #333;
 $body1: #a09b94;
 $body2: #776d5a;
 $body3: #453f3c;
@@ -9,6 +10,18 @@ $hilite2: #ffa600;
 $footer: #4f5d75;
 $padding: 20px;
 $arrow: 50px;
+
+body {
+  background: $body-color;
+  @include text-format(
+    $font-family-robotocondensed,
+    $font-weight-regular,
+    16,
+    $font-color
+  );
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .container {
   @include flexbox(column, normal, normal);
@@ -95,8 +108,8 @@ header {
     &:after {
       content: "";
       display: block;
-      border-top: calc($padding / 3) solid $font-color;
-      border-right: calc($padding / 3) solid $font-color;
+      border-top: calc($padding / 4) solid $font-color;
+      border-right: calc($padding / 4) solid $font-color;
       height: calc($arrow - $padding);
       width: calc($arrow - $padding);
       position: absolute;
@@ -109,11 +122,10 @@ header {
       @include font-size(48);
 
       &:after {
-        border-top: calc($padding / 2) solid $font-color;
-        border-right: calc($padding / 2) solid $font-color;
-        height: $arrow;
-        width: $arrow;
-        right: calc(50% - $arrow);
+        border-top: calc($padding / 3) solid $font-color;
+        border-right: calc($padding / 3) solid $font-color;
+        height: calc($arrow - $padding);
+        width: calc($arrow - $padding);
         bottom: $padding;
       }
     }
@@ -124,8 +136,8 @@ header {
       text-align: right;
 
       &:after {
-        border-top: 0.8vw solid $font-color;
-        border-right: 0.8vw solid $font-color;
+        border-top: 0.5vw solid $font-color;
+        border-right: 0.5vw solid $font-color;
         height: 3vw;
         width: 3vw;
         transform: translateY(-50%) rotate(45deg);
