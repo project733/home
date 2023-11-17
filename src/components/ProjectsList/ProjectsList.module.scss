@@ -36,7 +36,7 @@ $padding: 20px;
         height: 10px;
         width: 0;
         position: absolute;
-        bottom: 0;
+        top: 0;
         left: 0;
 
         transition: width 0.2s linear;
@@ -53,11 +53,13 @@ $padding: 20px;
     }
 
     h3 {
-      @include font-size(22);
-      padding: $padding 0;
+      background: rgba(255, 255, 255, 0.5);
+      font-size: 5vw;
+      padding: $padding calc($padding*2);
       position: absolute;
       bottom: 0;
-      width: calc(100% - ($padding * 4));
+      left: 0;
+      width: 100%;
     }
 
     ul {
@@ -70,12 +72,20 @@ $padding: 20px;
       }
     }
 
+    @include mq($from: tablet) {
+      h3 {
+        @include font-size(22);
+      }
+    }
+
     @include mq($from: small-screen) {
       .tile {
         height: 100%;
         width: 100%;
         overflow: hidden;
         position: relative;
+        bottom: 0;
+        top: auto;
 
         animation-timing-function: linear;
         animation-fill-mode: both;
@@ -83,6 +93,10 @@ $padding: 20px;
         animation-name: fadeIn;
 
         transition: fadeIn 0.5s ease-in-out;
+      }
+
+      h3 {
+        background: none;
       }
     }
   }
@@ -139,6 +153,14 @@ $padding: 20px;
     }
   }
 
+  @include mq($from: tablet) {
+    .img:first-child {
+      img {
+        height: 50vh;
+      }
+    }
+  }
+
   @include mq($from: small-screen) {
     flex-direction: row;
 
@@ -160,56 +182,56 @@ $padding: 20px;
   .projectTile {
     &1 {
       background: lightgrey;
-      @include text-border(lightgrey);
 
       @include mq($from: small-screen) {
         @include slide-background(#333, lightgrey);
+        @include text-border(lightgrey);
       }
     }
 
     &2 {
       background: lightpink;
-      @include text-border(lightpink);
 
       @include mq($from: small-screen) {
         @include slide-background(#333, lightpink);
+        @include text-border(lightpink);
       }
     }
 
     &3 {
       background: goldenrod;
-      @include text-border(goldenrod);
 
       @include mq($from: small-screen) {
         @include slide-background(#333, goldenrod);
+        @include text-border(goldenrod);
       }
     }
 
     &4 {
       background: lightskyblue;
-      @include text-border(lightskyblue);
 
       @include mq($from: small-screen) {
         @include slide-background(#333, lightskyblue);
+        @include text-border(lightskyblue);
       }
 
     }
 
     &5 {
       background: lightcoral;
-      @include text-border(lightcoral);
 
       @include mq($from: small-screen) {
         @include slide-background(#333, lightcoral);
+        @include text-border(lightcoral);
       }
     }
 
     &6 {
       background: gold;
-      @include text-border(gold);
 
       @include mq($from: small-screen) {
         @include slide-background(#333, gold);
+        @include text-border(gold);
       }
     }
   }
@@ -270,6 +292,7 @@ $padding: 20px;
     z-index: 2;
 
     h3 {
+      background: none;
       padding: 0 0 $padding 0;
       position: static;
     }
