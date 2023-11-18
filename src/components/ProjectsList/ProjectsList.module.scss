@@ -1,5 +1,12 @@
 @import "../../css/utilities/index";
 
+$bgcolor-base: #333;
+$bgcolor-tile1: #ffb6a3;
+$bgcolor-tile2: #f5d1c3;
+$bgcolor-tile3: #f0bc68;
+$bgcolor-tile4: #aab8bb;
+$bgcolor-tile5: #c4d7d1;
+$bgcolor-tile6: #f6d97c;
 $button-background: rgba(255, 255, 255, 0.8);
 $border-color: #333;
 $border-img: 1px solid #bebebe;
@@ -194,57 +201,57 @@ $padding: 20px;
 
   .projectTile {
     &1 {
-      background: lightgrey;
+      background: $bgcolor-tile1;
 
       @include mq($from: small-screen) {
-        @include slide-background(#333, lightgrey);
-        @include text-border(lightgrey);
+        @include slide-background($bgcolor-base, $bgcolor-tile1);
+        @include text-border($bgcolor-tile1);
       }
     }
 
     &2 {
-      background: lightpink;
+      background: $bgcolor-tile2;
 
       @include mq($from: small-screen) {
-        @include slide-background(#333, lightpink);
-        @include text-border(lightpink);
+        @include slide-background($bgcolor-base, $bgcolor-tile2);
+        @include text-border($bgcolor-tile2);
       }
     }
 
     &3 {
-      background: goldenrod;
+      background: $bgcolor-tile3;
 
       @include mq($from: small-screen) {
-        @include slide-background(#333, goldenrod);
-        @include text-border(goldenrod);
+        @include slide-background($bgcolor-base, $bgcolor-tile3);
+        @include text-border($bgcolor-tile3);
       }
     }
 
     &4 {
-      background: lightskyblue;
+      background: $bgcolor-tile4;
 
       @include mq($from: small-screen) {
-        @include slide-background(#333, lightskyblue);
-        @include text-border(lightskyblue);
+        @include slide-background($bgcolor-base, $bgcolor-tile4);
+        @include text-border($bgcolor-tile4);
       }
 
     }
 
     &5 {
-      background: lightcoral;
+      background: $bgcolor-tile5;
 
       @include mq($from: small-screen) {
-        @include slide-background(#333, lightcoral);
-        @include text-border(lightcoral);
+        @include slide-background($bgcolor-base, $bgcolor-tile5);
+        @include text-border($bgcolor-tile5);
       }
     }
 
     &6 {
-      background: gold;
+      background: $bgcolor-tile6;
 
       @include mq($from: small-screen) {
-        @include slide-background(#333, gold);
-        @include text-border(gold);
+        @include slide-background($bgcolor-base, $bgcolor-tile6);
+        @include text-border($bgcolor-tile6);
       }
     }
   }

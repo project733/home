@@ -142,8 +142,8 @@ header {
       &:after {
         border-top: 0.5vw solid $font-color;
         border-right: 0.5vw solid $font-color;
-        height: 3vw;
-        width: 3vw;
+        height: 2.6vw;
+        width: 2.6vw;
         transform: translateY(-50%) rotate(45deg);
         right: $padding;
         top: 50%;
@@ -153,13 +153,6 @@ header {
     @include mq($from: wide2) {
       @include font-size(48);
       padding: $padding calc($padding * 4) $padding $padding;
-
-      &:after {
-        border-top: 10px solid $font-color;
-        border-right: 10px solid $font-color;
-        height: $arrow;
-        width: $arrow;
-      }
     }
   }
 

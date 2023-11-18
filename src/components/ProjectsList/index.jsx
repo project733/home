@@ -8,9 +8,14 @@ function Projects() {
   // Initial set LI attributes
   const addARIA = () => {
     const projectLIs = document.querySelectorAll("#projects > li");
+    const projectAHREFs = document.querySelectorAll(".details a");
     for (let i = 0; i < projectLIs.length; i++) {
       projectLIs[i].setAttribute("aria-expanded", false);
       projectLIs[i].setAttribute("role", "listitem");
+      for (let j = 0; j < projectAHREFs.length; j++) {
+        projectAHREFs[j].tabIndex = -1;
+        projectAHREFs[j].setAttribute("aria-hidden", true);
+      }
     }
   };
   useEffect(() => {
@@ -40,10 +45,18 @@ function Projects() {
       e.currentTarget
         .querySelector(".details")
         .setAttribute("aria-hidden", false);
-      // Set .js-screenshots images active so it is readable via screenreaders
+      // Set screenshots active so they are readable via screenreaders
+      const screenContainer = e.currentTarget.querySelector(".js-screenshots");
+      screenContainer.setAttribute("aria-hidden", false);
       const screens = e.currentTarget.querySelectorAll(".js-screenshots img");
       for (let i = 0; i < screens.length; i++) {
         screens[i].setAttribute("aria-hidden", false);
+      }
+      // set links active so they are readable via screenreaders
+      const links = e.currentTarget.querySelectorAll(".details a");
+      for (let j = 0; j < links.length; j++) {
+        links[j].removeAttribute("tabindex");
+        links[j].setAttribute("aria-hidden", false);
       }
     }
   };
@@ -58,15 +71,26 @@ function Projects() {
       sections[i].setAttribute("tabindex", 0);
     }
     e.currentTarget.parentNode.parentNode.setAttribute("aria-expanded", false);
-    // Resets .details and .js-screenshots images blocks back to non-readable via screenreaders
+    // Resets .details and .js-screenshots blocks back to non-readable via screenreaders
     e.currentTarget.previousSibling.previousSibling
       .querySelector(".details")
       .setAttribute("aria-hidden", true);
+    const screenContainer =
+      e.currentTarget.parentNode.querySelector(".js-screenshots");
+    screenContainer.setAttribute("aria-hidden", true);
     const screens = e.currentTarget.previousSibling.querySelectorAll(
       ".js-screenshots img"
     );
     for (let i = 0; i < screens.length; i++) {
       screens[i].setAttribute("aria-hidden", true);
+    }
+    const links =
+      e.currentTarget.previousSibling.previousSibling.querySelectorAll(
+        ".details a"
+      );
+    for (let j = 0; j < links.length; j++) {
+      links[j].tabIndex = -1;
+      links[j].setAttribute("aria-hidden", true);
     }
   };
 
@@ -114,7 +138,19 @@ function Projects() {
                   <div className="details" aria-hidden={true}>
                     {project.desc ? <p>{project.desc}</p> : null}
                     {project.work ? <p>{project.work}</p> : null}
-                    {project.link ? <p><a href={project.link} target="_blank" rel="noopener noreferrer">{project.link}</a></p> : null}
+                    {project.link ? (
+                      <p>
+                        Visit website:
+                        <br />
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {project.link}
+                        </a>
+                      </p>
+                    ) : null}
                     {project.features.length > 0 ? (
                       <>
                         <p>Features:</p>
@@ -127,7 +163,11 @@ function Projects() {
                     ) : null}
                   </div>
                 </div>
-                <div className={`${styles.screenshots} js-screenshots`}>
+                <div
+                  className={`${styles.screenshots} js-screenshots`}
+                  aria-label={`Sample screenshots of ` + project.projectName}
+                  aria-hidden={true}
+                >
                   {project.imgSrc.map((screenshot, index) => {
                     return (
                       <div key={index} className={styles.img}>

@@ -71,6 +71,100 @@
   },
   {
     "id": 3,
+    "projectName": "Sam's Club US Online Photo Center",
+    "desc": "In the early stages of my career in 2006 at PNI Media, I was involved in a project for Sam's Club, focusing on their legacy Online Photocenter website. As the front-end developer, I collaborated closely with back-end developers and UI/UX designers to enhance the user experience by implementing responsive design and refreshing the user interface. The Sam's Club Online Photocenter included the main photo site, as well as sub-sites for greeting cards and stationery. Originally built in Java, the platform eventually underwent migration to ASP.net and incorporated jQuery.",
+    "link": "",
+    "work": "UI and front end development",
+    "features": [
+      "Semantic HTML",
+      "JavaScript",
+      "jQuery",
+      "Responsive CSS",
+      "SASS",
+      "Browser testing",
+      "WCAG 2.1/ADA AA compliance",
+      "Photoshop",
+      "InVision",
+      "CD/CI pipelines"
+    ],
+    "imgSrc": [
+      {
+        "url": "/assets/images/projects/samsclub-desktop.png",
+        "alt": "Desktop layout of Samsclub Online Photo Center"
+      },
+      {
+        "url": "/assets/images/projects/samsclub-tablet.png",
+        "alt": "Tablet layout of Samsclub Online Photo Center"
+      },
+      {
+        "url": "/assets/images/projects/samsclub-mobile.png",
+        "alt": "Mobile layout of Samsclub Online Photo Center"
+      },
+      {
+        "url": "/assets/images/projects/samsclub-stationery-desktop.png",
+        "alt": "Samsclub Online Photo Center Stationery search results page"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "projectName": "Costco US/CA Online Photo Center",
+    "desc": "In 2010, PNI Media collaborated with Costco to integrate print web services into their Online Photo Centers. As a front-end developer collaborating with back-end developers and UI/UX designers, I played a crucial role in implementing this integration for both the Canadian and US markets. Working on an enterprise-scale project, my responsibilities included developing the front end of their main photo sites and subsidiary greeting card sites. The project utilized ASP.net, HTML, CSS, JavaScript, and jQuery as its primary technologies. Later, in 2018, I spearheaded accessibility initiatives, ensuring the integration of WCAG features across all their websites.",
+    "link": "",
+    "work": "UI and front end development",
+    "features": [
+      "Semantic HTML",
+      "JavaScript",
+      "jQuery",
+      "Responsive CSS",
+      "SASS",
+      "Browser testing",
+      "WCAG 2.1/ADA AA compliance",
+      "Photoshop",
+      "Figma/InVision",
+      "CD/CI pipelines"
+    ],
+    "imgSrc": [
+      {
+        "url": "/assets/images/projects/costco-desktop.png",
+        "alt": "Desktop layout of Costco Online Photo Center"
+      },
+      {
+        "url": "/assets/images/projects/costco-tablet.png",
+        "alt": "Tablet layout of Costco Online Photo Center"
+      },
+      {
+        "url": "/assets/images/projects/costco-mobile.png",
+        "alt": "Mobile layout of Costco Online Photo Center"
+      },
+      {
+        "url": "/assets/images/projects/costco-greeting-cards-builder.png",
+        "alt": "Costco Online Photo Center responsive Photo Card Builder"
+      },
+      {
+        "url": "/assets/images/projects/costco-photo-gifts.png",
+        "alt": "Costco Online Photo Center Photo Gifts landing page"
+      },
+      {
+        "url": "/assets/images/projects/costco-wall-decor.png",
+        "alt": "Costco Online Photo Center Wall Decor landing page"
+      },
+      {
+        "url": "/assets/images/projects/costco-canvas-prints.png",
+        "alt": "Costco Online Photo Center Canvas Prints landing page"
+      },
+      {
+        "url": "/assets/images/projects/costco-greeting-cards-search.png",
+        "alt": "Costco Online Photo Center Greeting Cards sub-site Search Results page"
+      },
+      {
+        "url": "/assets/images/projects/costco-gift-builder.png",
+        "alt": "Costco Online Photo Center responsive Photo Gift Builder"
+      }
+    ]
+  },
+  {
+    "id": 5,
     "projectName": "Staples Print & Marketing Services US",
     "desc": "In my role as a front-end developer, I contributed to the creation of a dynamic Product Pricing component utilizing ReactJS, NextJS, TypeScript, and CSS modules. This component served as a demonstration of seamless integration with the Bloomreach headless CMS. With a focus on full responsiveness, enhanced semantic HTML structure, and a user-friendly CMS integration approach, the component was designed to elevate the overall user experience.",
     "link": "",
@@ -109,100 +203,6 @@
     ]
   },
   {
-    "id": 4,
-    "projectName": "Sam's Club US Online Photocenter",
-    "desc": "In the early stages of my career in 2006 at PNI Media, I was involved in a project for Sam's Club, focusing on their legacy Online Photocenter website. As the front-end developer, I collaborated closely with back-end developers and UI/UX designers to enhance the user experience by implementing responsive design and refreshing the user interface. The Sam's Club Online Photocenter included the main photo site, as well as sub-sites for greeting cards and stationery. Originally built in Java, the platform eventually underwent migration to ASP.net and incorporated jQuery.",
-    "link": "",
-    "work": "UI and front end development",
-    "features": [
-      "Semantic HTML",
-      "JavaScript",
-      "jQuery",
-      "Responsive CSS",
-      "SASS",
-      "Browser testing",
-      "WCAG 2.1/ADA AA compliance",
-      "Photoshop",
-      "InVision",
-      "CD/CI pipelines"
-    ],
-    "imgSrc": [
-      {
-        "url": "/assets/images/projects/samsclub-desktop.png",
-        "alt": "Desktop layout of Samsclub Online Photocenter"
-      },
-      {
-        "url": "/assets/images/projects/samsclub-tablet.png",
-        "alt": "Tablet layout of Samsclub Online Photoecnter"
-      },
-      {
-        "url": "/assets/images/projects/samsclub-mobile.png",
-        "alt": "Mobile layout of Samsclub Online Photocenter"
-      },
-      {
-        "url": "/assets/images/projects/samsclub-stationery-desktop.png",
-        "alt": "Samsclub Online Photocenter Stationery search results page"
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "projectName": "Costco US/CA Online Photocenter",
-    "desc": "In 2010, PNI Media collaborated with Costco to integrate print web services into their Online Photocenters. As a front-end developer collaborating with back-end developers and UI/UX designers, I played a crucial role in implementing this integration for both the Canadian and US markets. Working on an enterprise-scale project, my responsibilities included developing the front end of their main photo sites and subsidiary greeting card sites. The project utilized ASP.net, HTML, CSS, JavaScript, and jQuery as its primary technologies. Later, in 2018, I spearheaded accessibility initiatives, ensuring the integration of WCAG features across all their websites.",
-    "link": "",
-    "work": "UI and front end development",
-    "features": [
-      "Semantic HTML",
-      "JavaScript",
-      "jQuery",
-      "Responsive CSS",
-      "SASS",
-      "Browser testing",
-      "WCAG 2.1/ADA AA compliance",
-      "Photoshop",
-      "Figma/InVision",
-      "CD/CI pipelines"
-    ],
-    "imgSrc": [
-      {
-        "url": "/assets/images/projects/costco-desktop.png",
-        "alt": "Desktop layout of Costco Online Photocenter"
-      },
-      {
-        "url": "/assets/images/projects/costco-tablet.png",
-        "alt": "Tablet layout of Costco Online Photocenter"
-      },
-      {
-        "url": "/assets/images/projects/costco-mobile.png",
-        "alt": "Mobile layout of Costco Online PHotocenter"
-      },
-      {
-        "url": "/assets/images/projects/costco-greeting-cards-builder.png",
-        "alt": "Costco Online Photocenter responsive Photo Card Builder"
-      },
-      {
-        "url": "/assets/images/projects/costco-photo-gifts.png",
-        "alt": "Costco Online Photocenter Photo Gifts landing page"
-      },
-      {
-        "url": "/assets/images/projects/costco-canvas-prints.png",
-        "alt": "Costco Online Photocenter Canvas Prints landing page"
-      },
-      {
-        "url": "/assets/images/projects/costco-greeting-cards-search.png",
-        "alt": "Costco Online Photocenter Greeting Cards sub-site Search Results page"
-      },
-      {
-        "url": "/assets/images/projects/costco-wall-decor.png",
-        "alt": "Costco Online Photocenter Wall Decor landing page"
-      },
-      {
-        "url": "/assets/images/projects/costco-gift-builder.png",
-        "alt": "Costco Online Photocenter responsive Photo Gift Builder"
-      }
-    ]
-  },
-  {
     "id": 6,
     "projectName": "Kanban-style board",
     "desc": "Mini JavaScript project (without using a framework) highlighting drag-and-drop functionality, responsive design, SASS usage, WCAG accessibility principles with semantic HTML, and integration of browser localStorage.",
@@ -237,7 +237,7 @@
   {
     "id": 7,
     "projectName": "Personal Portfolio",
-    "desc": "Most recent ReactJS project focused on creating my personal portfolio website. The project showcases the incorporation of CSS3 animations and transitions, along with the utilization of JSON files, mapping arrays, CSS modules, and the integration of WCAG features.",
+    "desc": "ReactJS project focused on creating my personal portfolio website. The project showcases the incorporation of CSS3 animations and transitions, along with the utilization of JSON files, mapping arrays, CSS modules, and the integration of WCAG features.",
     "link": "",
     "work": "UI and front end development",
     "features": [
