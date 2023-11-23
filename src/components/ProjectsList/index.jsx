@@ -11,7 +11,6 @@ function Projects() {
     const projectAHREFs = document.querySelectorAll(".details a");
     for (let i = 0; i < projectLIs.length; i++) {
       projectLIs[i].setAttribute("aria-expanded", false);
-      projectLIs[i].setAttribute("role", "listitem");
       for (let j = 0; j < projectAHREFs.length; j++) {
         projectAHREFs[j].tabIndex = -1;
         projectAHREFs[j].setAttribute("aria-hidden", true);
@@ -114,7 +113,8 @@ function Projects() {
       <ul
         id="projects"
         className={styles.projects}
-        aria-label="List of projects"
+        aria-label="- List of projects"
+        aria-labelledby="myportfolio projects"
         ref={divRef}
       >
         {/* Tiles capped at 6 reverse order - most recent at the end of array */}

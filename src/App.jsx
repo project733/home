@@ -32,7 +32,7 @@ function App() {
       <header className={styles.fade}>
         <h1 className={styles.myname}>Kevin Leung</h1>
         <h2>I'm a <span className={styles.myskills}>Web/HTML Programmer</span></h2>
-        <h2 className={styles.mywork}>My portfolio</h2>
+        <h2 className={styles.mywork} id='myportfolio'>My portfolio</h2>
       </header>
 
       <Projects />
