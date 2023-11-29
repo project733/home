@@ -16,7 +16,7 @@ body {
   @include text-format(
     $font-family-robotocondensed,
     $font-weight-regular,
-    16,
+    18,
     $font-color
   );
   -webkit-font-smoothing: antialiased;
