@@ -120,6 +120,7 @@ $padding: 20px;
   @include mq($from: small-screen) {
     flex-direction: row;
     flex-flow: row wrap;
+    height: 100%;
     width: 70vw;
 
     > li {
@@ -130,7 +131,7 @@ $padding: 20px;
       animation-duration: 0.2s;
       animation-name: slideUp;
 
-      transition: slideUp 0.5s ease-in-out;
+      transition: slideUp 0.5s ease-in-out, openPopup 0.3s ease-in-out;
       flex-grow: 1;
       height: 50vh;
       width: 33%;
@@ -187,7 +188,6 @@ $padding: 20px;
 
       img {
         height: 30vh;
-        // width: 150%;
       }
     }
   }
@@ -293,12 +293,11 @@ $padding: 20px;
   }
 
   li.closed {
-    height: 0;
+    height: 100%;
     display: none;
 
     @include mq($from: small-screen) {
       display: list-item;
-      height: 50vh;
     }
   }
 
@@ -310,6 +309,8 @@ $padding: 20px;
     top: 0;
     left: 0;
     z-index: 2;
+
+    transition: width 0.2s ease;
 
     h3 {
       background: none;

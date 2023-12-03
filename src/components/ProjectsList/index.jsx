@@ -4,7 +4,7 @@ import projects from "./project_tiles";
 import "../../css/global.scss";
 import styles from "./ProjectsList.module.scss";
 
-function Projects() {
+export const Projects = () => {
   // Initial set LI attributes
   const addARIA = () => {
     const projectLIs = document.querySelectorAll("#projects > li");
@@ -195,6 +195,4 @@ function Projects() {
       </ul>
     </main>
   );
-}
-
-export default Projects;
+};

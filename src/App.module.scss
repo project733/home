@@ -13,12 +13,10 @@ $arrow: 50px;
 
 body {
   background: $body-color;
-  @include text-format(
-    $font-family-robotocondensed,
+  @include text-format($font-family-robotocondensed,
     $font-weight-regular,
     18,
-    $font-color
-  );
+    $font-color );
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
