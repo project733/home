@@ -293,7 +293,7 @@ $padding: 20px;
   }
 
   li.closed {
-    height: 100%;
+    height: 0;
     display: none;
 
     @include mq($from: small-screen) {
