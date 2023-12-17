@@ -290,6 +290,10 @@ $padding: 20px;
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
+
+    @include mq($from: small-screen) {
+      position: fixed;
+    }
   }
 
   li.closed {
