@@ -235,6 +235,39 @@
     ]
   },
   {
+    "id": 7,
+    "projectName": "Personal Portfolio",
+    "desc": "ReactJS project focused on creating my personal portfolio website. The project showcases the incorporation of CSS3 animations and transitions, along with the utilization of JSON files, mapping arrays, CSS modules, and the integration of WCAG features.",
+    "link": "",
+    "work": "UI and front end development",
+    "features": [
+      "Semantic HTML",
+      "ReactJS",
+      "JavaScript",
+      "Responsive CSS",
+      "SASS",
+      "JSON",
+      "Browser testing",
+      "WCAG 2.1/ADA AA compliance",
+      "Figma",
+      "Git/Github"
+    ],
+    "imgSrc": [
+      {
+        "url": "/assets/images/projects/portfolio-desktop.png",
+        "alt": "Desktop layout of personal portfolio site"
+      },
+      {
+        "url": "/assets/images/projects/portfolio-tablet.png",
+        "alt": "Tablet layout of personal portfolio site"
+      },
+      {
+        "url": "/assets/images/projects/portfolio-mobile.png",
+        "alt": "Mobile layout of personal portfolio site"
+      }
+    ]
+  },
+  {
     "id": 8,
     "projectName": "DEMO - Financial Site",
     "desc": "ReactJS project focused on simple financial style website. The project showcases use of react-router-dom.  This was a quick sample done in several days to show a working model of a single page application in desktop and tablet views.",
